@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Architecture Overview
 
 S3 (JSON files)
@@ -166,3 +167,7 @@ Latest-price snapshot logic
 Airflow orchestration
 
 Power BI dashboard built on the mart
+=======
+# entsoe-energy_pipeline
+Daily Electricity Prices across multiples Eurpoean countries
+>>>>>>> 597fd099ff95aa3e0ee90b0ebdb2766103863fb8
