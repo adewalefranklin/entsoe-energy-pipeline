@@ -7,7 +7,7 @@ This repository contains an end-to-end data engineering pipeline for processing 
 The pipeline covers the full lifecycle of data:
 API ingestion → cloud storage → warehouse modeling → analytics-ready mart.
 
-![alt text](dbt-linear-graph-2.png)
+![!\[alt text\](dbt-linear-graph-2.png)](dbt-lineage-graph.png)
 
 🏗️ Architecture Overview
 
