@@ -1,0 +1,16 @@
+version: 2
+
+sources:
+  - name: entsoe
+    database: ENTSOE_DB
+    schema: ENTSOE_SCHEMA
+    tables:
+      - name: ENTSOE_RAW
+        description: "Raw JSON ingested from S3 via Snowpipe"
+        columns:
+          - name: LOAD_TIME
+            description: "Timestamp when the file row was loaded into Snowflake"
+          - name: FILENAME
+            description: "S3 object filename (METADATA$FILENAME)"
+          - name: PAYLOAD
+            description: "Raw JSON content as VARIANT"

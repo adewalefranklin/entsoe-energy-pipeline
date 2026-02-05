@@ -1,0 +1,28 @@
+WITH raw_data AS (
+
+    SELECT
+        load_time,
+        filename,
+        payload,
+        payload:zone::string AS zone,
+        payload:date::date   AS delivery_date
+    FROM {{ source('entsoe', 'ENTSOE_RAW') }}
+
+),
+
+flattened AS (
+
+    SELECT
+        load_time::timestamp_ntz AS load_time,
+        filename::string         AS filename,
+        zone,
+        delivery_date,
+        f.value:position::int    AS position,
+        f.value:price::float     AS price_amount
+    FROM raw_data,
+    LATERAL FLATTEN(input => payload:points) f
+
+)
+
+SELECT *
+FROM flattened

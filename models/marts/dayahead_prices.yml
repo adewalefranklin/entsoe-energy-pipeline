@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: mart_day_ahead_prices
+    description: "BI-ready mart for ENTSO-E day-ahead electricity prices (denormalized: fact + zone/date dims)."
+    columns:
+      - name: price_key
+        tests: [not_null, unique]
+      - name: zone_code
+        tests: [not_null]
+      - name: delivery_date
+        tests: [not_null]
+      - name: price_eur_mwh
+        tests: [not_null]
+      - name: period_of_day
+        tests: [not_null]
